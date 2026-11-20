@@ -1,0 +1,104 @@
+<title>Java · Spring · Spring Boot Microservices — 100-Day Content Guide</title>
+<style>
+  @page { margin: 16mm 15mm 17mm; }
+  :root{
+    --ink:#16202a; --muted:#56616e; --line:#dce1e7; --accent:#148f5b; --accent2:#0b6b43;
+    --soft:#e7f4ee; --code:#f4f6f8; --amber:#9a5a16; --amberbg:#fbf3e8;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:"Charter","Georgia",serif;color:var(--ink);line-height:1.46;font-size:10.4pt;margin:0;}
+  h1{font-size:23pt;line-height:1.08;margin:0 0 3px;letter-spacing:-0.4px;}
+  h2{font-size:13.5pt;margin:20px 0 5px;color:var(--accent2);border-bottom:2px solid var(--accent);padding-bottom:3px;}
+  h3{font-size:11pt;margin:13px 0 3px;}
+  .sub{color:var(--muted);font-size:10.3pt;margin:0 0 10px;}
+  .eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:8pt;color:var(--accent2);font-family:"Helvetica Neue",sans-serif;}
+  p{margin:5px 0;} ul,ol{margin:5px 0;padding-left:19px;} li{margin:2.5px 0;}
+  code{font-family:"SF Mono","Menlo",monospace;font-size:8.7pt;background:var(--code);padding:1px 4px;border-radius:3px;}
+  .box{background:var(--soft);border-left:3px solid var(--accent);padding:7px 11px;margin:8px 0;border-radius:0 4px 4px 0;}
+  .amber{background:var(--amberbg);border-left:3px solid var(--amber);padding:7px 11px;margin:8px 0;border-radius:0 4px 4px 0;}
+  .amber b{color:var(--amber);}
+  table{width:100%;border-collapse:collapse;margin:8px 0;font-size:9.4pt;}
+  th{background:var(--accent2);color:#fff;text-align:left;padding:5px 8px;font-family:"Helvetica Neue",sans-serif;font-size:8.6pt;}
+  td{border-bottom:1px solid var(--line);padding:5px 8px;vertical-align:top;}
+  tr:nth-child(even) td{background:#fafbfc;}
+  .phase{font-family:"Helvetica Neue",sans-serif;font-size:8pt;color:var(--accent2);letter-spacing:.4px;}
+  .foot{margin-top:14px;color:var(--muted);font-size:8.2pt;border-top:1px solid var(--line);padding-top:6px;}
+</style>
+
+<p class="eyebrow">Learning Roadmap · 100 Days</p>
+<h1>Java · Spring · Spring Boot Microservices</h1>
+<p class="sub">The complete content guide behind the 100-day schedule. One topic a day,
+each with a real-time "ShopFast" scenario, a learn task, and a build task — ending in a
+full microservices capstone you can demo.</p>
+
+<div class="box"><b>How this works.</b> ~1.5–2 hours a day: ≈45 min <b>learn</b> the concept →
+≈45 min <b>build</b> something that runs → ≈15 min <b>notes + commit</b>. Each day lives in
+its own file (<code>days/day-001.md</code> … <code>day-100.md</code>) on GitHub; the dated
+<code>SCHEDULE.md</code> links them in order. Every day opens with a <b>real-time ShopFast
+scenario</b> — a running story of building one online-order platform — so the concept always
+attaches to a real system, not an abstract snippet.</div>
+
+<h2>The seven phases</h2>
+<table>
+<tr><th>Days</th><th>Phase</th><th>What you'll be able to do by the end</th></tr>
+<tr><td>1–15</td><td class="phase">1 · Modern Java foundations</td><td>Write clean Java 21 — OOP, collections, generics, streams, Optional, lambdas, exceptions, java.time — and a small CLI app.</td></tr>
+<tr><td>16–32</td><td class="phase">2 · Spring & Spring Boot</td><td>Build a layered REST API with DI, validation, global error handling, OpenAPI docs, config/profiles, and logging.</td></tr>
+<tr><td>33–47</td><td class="phase">3 · Persistence (JPA)</td><td>Model and query real data with Spring Data JPA, relationships, transactions, pooling, migrations, caching — on MySQL.</td></tr>
+<tr><td>48–62</td><td class="phase">4 · Production-ready service</td><td>Test it properly (JUnit/Mockito/MockMvc/Testcontainers) and secure it with Spring Security + JWT + Actuator.</td></tr>
+<tr><td>63–83</td><td class="phase">5 · Microservices & Spring Cloud</td><td>Split into services; add discovery (Eureka), gateway, config server, Feign, Resilience4j, and Kafka event-driven messaging + saga/outbox.</td></tr>
+<tr><td>84–95</td><td class="phase">6 · Observability, containers, CI/CD</td><td>Add metrics/tracing/logging, Dockerize, Compose, deploy to Kubernetes, and build a GitHub Actions pipeline.</td></tr>
+<tr><td>96–100</td><td class="phase">7 · Capstone</td><td>Design and build your own multi-service system end-to-end and present it.</td></tr>
+</table>
+
+<h2>What you'll learn to do (outcomes)</h2>
+<ul>
+<li>Stand up a secured, tested, documented Spring Boot REST service on a real database.</li>
+<li>Decompose a system into microservices and wire them with the Spring Cloud stack.</li>
+<li>Make services resilient (circuit breakers, retries, timeouts) and loosely coupled with events.</li>
+<li>Observe them (metrics, logs, traces), containerize them, and deploy to Kubernetes via CI/CD.</li>
+<li>Reason about the hard parts — distributed data, idempotency, sagas, eventual consistency.</li>
+</ul>
+
+<h2>Prerequisites (do once, Day 1)</h2>
+<ul>
+<li>JDK 21 (<code>java -version</code>) + IntelliJ IDEA; Maven (bundled).</li>
+<li>MySQL locally (Docker is fine); Docker Desktop for the later phases.</li>
+<li>Git + <code>gh</code> CLI (already set up); an Anthropic API key only if you want Claude-assisted days.</li>
+<li>Reuse your existing repos as scaffolds: <code>good-morning</code>, <code>spring-mysql-crud</code>, <code>task-api</code>, <code>spring-microservices-demo</code>.</li>
+</ul>
+
+<h2>The ShopFast throughline</h2>
+<p>Every day's scenario is a chapter in building <b>ShopFast</b>, an online-order platform.
+Early days add plain-Java logic (order classification, wallets, pricing); the middle builds its
+REST API and database; later days split it into <b>product / order / payment</b> services behind a
+gateway, add an <code>OrderPlaced</code> event stream, and ship it on Kubernetes. By Day 95 the whole
+system comes up with one command. This continuity is deliberate: you're not learning 100 disconnected
+tricks — you're watching one real system grow from a <code>main()</code> method to a cloud-deployed
+microservices platform.</p>
+
+<h2>Daily rhythm &amp; rules</h2>
+<ol>
+<li><b>Code every day</b> — one runnable thing. Momentum beats marathon sessions.</li>
+<li><b>Commit daily</b> — the repo doubles as your portfolio and your proof of consistency.</li>
+<li><b>Fill the 3-line note</b> (learned / built / confusing) in each day file — future-you will thank you.</li>
+<li><b>Fell behind?</b> Don't reset the calendar — just continue at the next topic. Order matters, dates don't.</li>
+<li><b>Use Claude Code as your pair</b> — ask it to explain a concept, review your code, or debug a failure.</li>
+</ol>
+
+<div class="amber"><b>Adjust freely.</b> The schedule is calendar-sequential from the start date;
+it doesn't skip weekends. Treat weekends/holidays as buffer or review — the point is 100 topics in
+order, not 100 consecutive calendar days. Re-run <code>generate_days.py</code> with a new
+<code>START_DATE</code> to re-date everything.</div>
+
+<h2>Repository layout</h2>
+<table>
+<tr><th>Path</th><th>What it is</th></tr>
+<tr><td><code>SCHEDULE.md</code></td><td>The full dated table, one row per day, linking each day file</td></tr>
+<tr><td><code>days/day-001.md … day-100.md</code></td><td>One document per topic: scenario · learn · build · objectives · notes · resources</td></tr>
+<tr><td><code>generate_days.py</code></td><td>The curriculum + generator (edit the start date or topics here)</td></tr>
+<tr><td><code>content_guide.pdf</code> / <code>schedule.pdf</code></td><td>This guide and the printable schedule</td></tr>
+</table>
+
+<p class="foot">100-Day Java · Spring · Spring Boot Microservices roadmap · generated for a start date of
+19 Nov 2026. Verify version-specific details against the official Spring / Spring Boot / Spring Cloud
+reference docs for your chosen versions. Pair each day with hands-on code committed to the repo.</p>
